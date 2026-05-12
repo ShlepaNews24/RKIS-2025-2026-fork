@@ -125,7 +125,7 @@ MVVM, `INotifyPropertyChanged`, `CommunityToolkit.Mvvm`, `ObservableObject`, `[O
 
 ### Дедлайн
 
-26 апреля 2026
+3 мая 2026
 
 ---
 
@@ -133,7 +133,7 @@ MVVM, `INotifyPropertyChanged`, `CommunityToolkit.Mvvm`, `ObservableObject`, `[O
 
 ### Темы:
 
-—
+Слоистая архитектура, Domain-Driven Design, Dependency Injection
 
 ---
 
@@ -141,27 +141,7 @@ MVVM, `INotifyPropertyChanged`, `CommunityToolkit.Mvvm`, `ObservableObject`, `[O
 
 ### Темы:
 
-—
-
-### Дедлайн
-
-10 мая 2026
-
----
-
-## Занятие 12. Данные, валидация и обработка ошибок
-
-### Темы:
-
-—
-
----
-
-## Занятие 13. Безопасность Web API и работа с файлами
-
-### Темы:
-
-—
+Kestrel, Minimal API, Controllers, Swagger, OpenAPI
 
 ### Дедлайн
 
@@ -169,11 +149,27 @@ MVVM, `INotifyPropertyChanged`, `CommunityToolkit.Mvvm`, `ObservableObject`, `[O
 
 ---
 
-## Занятие 14. Архитектура проекта и др
+## Занятие 12. Логирование, конвейер обработки запросов, фильтры
 
 ### Темы:
 
-—
+`ILogger`, Middleware, Filters
+
+---
+
+## Занятие 13. Работа с данными в ASP.NET
+
+### Темы:
+
+`AddDbContext`, DTO, AutoMapper, Загрузка-Хранение-Возврат файлов: wwwroot, `IFormFile`, `UseStaticFiles`, `PhysicalFile`, `FileStreamResult`
+
+---
+
+## Занятие 14. Безопасность в ASP.NET
+
+### Темы:
+
+JWT-токен, Аутентификация, Авторизация, Роли и Политики, Хранение секретов, Защита от типичных атак
 
 ---
 
@@ -181,7 +177,7 @@ MVVM, `INotifyPropertyChanged`, `CommunityToolkit.Mvvm`, `ObservableObject`, `[O
 
 ### Темы:
 
-—
+Release, Обратный прокси-сервер, IIS, Nginx, Apache, VPS-хостинг, SSH, Docker
 
 ---
 
@@ -235,23 +231,11 @@ Test-Driven Development, Цикл Red-Green-Refactor
 
 ---
 
-## Занятие 5. Интеграционное тестирование
+## Занятие 5. Тестирование API
 
 ### Темы:
 
-—
-
-### Дедлайн
-
-3 мая 2026
-
----
-
-## Занятие 6. Тестирование API
-
-### Темы:
-
-—
+Postman, Коллекции, Окружения, Переменные, Скрипты, Runner
 
 ### Дедлайн
 
