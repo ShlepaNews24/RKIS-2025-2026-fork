@@ -51,6 +51,7 @@
         <!-- Список задач -->
         <ListView ItemsSource="{Binding Tasks}"
                   SelectedItem="{Binding SelectedTask}"
+                  IsSynchronizedWithCurrentItem="True"
                   MouseDoubleClick="ListView_MouseDoubleClick">
             <ListView.View>
                 <GridView>

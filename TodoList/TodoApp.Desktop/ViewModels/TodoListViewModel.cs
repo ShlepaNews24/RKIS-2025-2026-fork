@@ -22,6 +22,8 @@ namespace TodoApp.Desktop.ViewModels
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(IsTaskSelected))]
+        [NotifyCanExecuteChangedFor(nameof(EditTaskCommand))]
+        [NotifyCanExecuteChangedFor(nameof(DeleteTaskCommand))]
         private TodoItem? selectedTask;
 
         [ObservableProperty]
@@ -60,6 +62,12 @@ namespace TodoApp.Desktop.ViewModels
             }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
+        // Явное уведомление об изменении IsTaskSelected при смене SelectedTask
+        partial void OnSelectedTaskChanged(TodoItem? value)
+        {
+            OnPropertyChanged(nameof(IsTaskSelected));
+        }
+
         private async Task LoadAsync()
         {
             try
@@ -89,7 +97,6 @@ namespace TodoApp.Desktop.ViewModels
 
         private void ApplyFilters()
         {
-            // Получаем список задач синхронно для простоты (можно улучшить)
             var allItems = _todoRepo.GetAllForProfileAsync(_profileId).Result;
             IEnumerable<TodoItem> query = allItems;
 

@@ -1,5 +1,4 @@
 using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 using TodoApp.Desktop.Services;
 
 namespace TodoApp.Desktop.ViewModels
@@ -17,12 +16,6 @@ namespace TodoApp.Desktop.ViewModels
         {
             _navigation = navigation;
         }
-
-        [RelayCommand]
-        private void NavigateToLogin() => _navigation?.NavigateTo<LoginViewModel>();
-
-        [RelayCommand]
-        private void NavigateToRegister() => _navigation?.NavigateTo<RegisterViewModel>();
 
         public void NavigateToTasks(Guid profileId)
         {

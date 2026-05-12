@@ -1,14 +1,6 @@
 <Window x:Class="TodoApp.Desktop.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="clr-namespace:TodoApp.Desktop.ViewModels"
-        Title="TodoApp"
-        Height="600" Width="900">
-    <DockPanel>
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="10">
-            <Button Content="Вход" Command="{Binding NavigateToLoginCommand}" Margin="5"/>
-            <Button Content="Регистрация" Command="{Binding NavigateToRegisterCommand}" Margin="5"/>
-        </StackPanel>
-        <ContentControl Content="{Binding CurrentViewModel}" />
-    </DockPanel>
+        Title="TodoApp" Height="600" Width="900">
+    <ContentControl Content="{Binding CurrentViewModel}" />
 </Window>
