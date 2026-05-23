@@ -1,0 +1,8 @@
+name: TodoApp Development
+values:
+  - key: base_url
+    value: ''
+  - key: auth_token
+    value: ''
+  - key: todo_id
+    value: ''

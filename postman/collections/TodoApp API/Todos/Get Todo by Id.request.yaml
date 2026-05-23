@@ -1,0 +1,13 @@
+$kind: http-request
+name: Get Todo by Id
+url: "{{base_url}}/api/todos/{{todo_id}}"
+method: GET
+headers:
+  Authorization: Bearer {{auth_token}}
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status 200 OK\", () => pm.response.to.have.status(200));\r
+
+      pm.test(\"Id matches\", () => pm.response.json().id == pm.environment.get(\"todo_id\"));"
+    language: text/javascript
+order: 3810434984539759

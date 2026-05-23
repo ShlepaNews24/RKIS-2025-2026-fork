@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{base_url}}/api/todos"
+method: GET
+headers:
+  Authorization: Bearer {{auth_token}}
+auth:
+  type: bearer
+  credentials:
+    token: "{{auth_token}}"
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status 200 OK\", () => pm.response.to.have.status(200));\r
+
+      pm.test(\"Response is array\", () => pm.expect(pm.response.json()).to.be.an(\"array\"));"
+    language: text/javascript
+order: 2248665474662927

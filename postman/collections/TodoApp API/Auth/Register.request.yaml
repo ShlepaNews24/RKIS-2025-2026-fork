@@ -1,0 +1,26 @@
+$kind: http-request
+name: Register
+url: '{{base_url}}/api/auth/register'
+method: POST
+body:
+  type: json
+  content: |-
+    {
+      "login": "testuser",
+      "password": "123456",
+      "firstName": "Test",
+      "lastName": "User",
+      "birthYear": 1990
+    }
+scripts:
+  - type: test
+    code: |-
+      pm.test("Status 200 OK", () => pm.response.to.have.status(200));
+      pm.test("Response has token and userId", () => {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property("token");
+          pm.expect(json).to.have.property("userId");
+          pm.environment.set("auth_token", json.token);
+      });
+    language: text/javascript
+order: 1847665542980335

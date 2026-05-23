@@ -1,0 +1,24 @@
+$kind: http-request
+name: Update Todo
+url: "{{base_url}}/api/todos/{{todo_id}}"
+method: PUT
+headers:
+  Authorization: Bearer {{auth_token}}
+body:
+  type: json
+  content: "{\r
+
+    \    \"text\": \"Buy milk and eggs\",\r
+
+    \    \"status\": 1\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{auth_token}}"
+scripts:
+  - type: afterResponse
+    code: pm.test("Status 204 No Content", () => pm.response.to.have.status(204));
+    language: text/javascript
+order: 3878108089708350

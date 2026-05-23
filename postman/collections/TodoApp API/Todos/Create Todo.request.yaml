@@ -1,0 +1,26 @@
+$kind: http-request
+name: Create Todo
+url: "{{base_url}}/api/todos"
+method: POST
+headers:
+  Authorization: Bearer {{auth_token}}
+body:
+  type: json
+  content: "{\r\n    \"text\": \"Buy milk\"\r\n}"
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status 201 Created\", () => pm.response.to.have.status(201));\r
+
+      pm.test(\"Todo has id\", () => {\r
+
+      \    const json = pm.response.json();\r
+
+      \    pm.expect(json.id).to.be.a(\"number\");\r
+
+      \    pm.environment.set(\"todo_id\", json.id);\r
+
+      });\r
+
+      pm.test(\"Text matches\", () => pm.response.json().text === \"Buy milk\");"
+    language: text/javascript
+order: 1779553738845

@@ -1,0 +1,28 @@
+$kind: http-request
+name: Login
+url: "{{base_url}}/api/auth/login"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"login\": \"testuser\",\r
+
+    \    \"password\": \"123456\"\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status 200 OK\", () => pm.response.to.have.status(200));\r
+
+      pm.test(\"Token received\", () => {\r
+
+      \    const json = pm.response.json();\r
+
+      \    pm.expect(json.token).to.be.a(\"string\");\r
+
+      \    pm.environment.set(\"auth_token\", json.token);\r
+
+      });"
+    language: text/javascript
+order: 4137155458482989
